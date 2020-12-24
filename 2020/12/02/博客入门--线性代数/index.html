@@ -1,0 +1,504 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Hexo" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Hexo" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="Hexo" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="线性代数篇" />
+
+
+<link rel="canonical" href="http://example.com/2020/12/02/%E5%8D%9A%E5%AE%A2%E5%85%A5%E9%97%A8--%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+
+
+
+  <title>
+浅析线性代数 - 数学类 |
+December = Hexo</title>
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">浅析线性代数
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2020-12-02 19:49:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2020-12-02T19:49:00+08:00">2020-12-02</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">Symbols count in article</span>
+    <span>534</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">Reading time</span>
+    <span>1 mins.</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">December</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclh5u05ej20zk0m87df.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclg5ms2rj20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciusoyjnj219g0u0x56.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeyvx1d4j20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclh0m9pdj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipewkhf1zj20zk0m81kx.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E6%95%B0%E5%AD%A6%E7%B1%BB/" itemprop="item" rel="index" title="In 数学类"><span itemprop="name">数学类</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/02/%E5%8D%9A%E5%AE%A2%E5%85%A5%E9%97%A8--%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="AI AO">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hexo">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <div class="hbe-input-container">
+  <input type="password" id="hbePass" placeholder="" />
+    <label for="hbePass">密码是“微笑”的英文单词smile</label>
+    <div class="bottom-line"></div>
+  </div>
+  <script id="hbeData" type="hbeData" data-hmacdigest="7c49c13da80987bfdb21bfacb161bf96df105daf894851554b116d78fcb45f39">a21b73e7c52ff47b7e8108ba694f6645dc3279ce6b8bfd0ada065e9d426e08b410e81e825be8b3ffa10bd005faf39dea906a7abd000cf308851929dc3eab3aa169dc09899591ec5f2888f4e031ad2fccdadc34374dbc6db7f2e4c677cd71568f9c868e67ffbb80ef7eae9c5c55e59f058b5d699dece74041938d876e639e59b194cc58370894676ccc4b01eb232fa649153f44d22f1b948ac08c9bf596999955581d8be93ce163b3efb6ccc61647e8027aad627aea049b3b4205219c4b8fc0967ebb0481c813d2601c47c1efbdbb3ab2aa6d8762e66936ccf1aa0b654f35ca7c7f4808e6f3a6836ab2c7473bbdc3004d049b1b11f277d0a8ba33144089eddf063b4fe9786def3be4f94205e96b1f733bfd5a433aa518dbb659f993d93bf49e33f00894474a378939019452553ce1ee3580b30195e80ff2449d1b5e5b94d7128bff1179c98e99144c2ef0ae877d5671fef8c0e7e85c30f8ddfa546d30573d904200856ecf94ea9cf755fd8927e9d7351692320124ce480a1e0fdd5079c9c7cbb633973c86bd00381ad7c50e97245709b4474f3023525b23fce51588fe239bd51844c35ecec53614b984dd602c95087d615e0b62e10dcb6fe56750f7db011997b6a0f6673c10d1b16534faaca291118b47617fac25a92cc9eb0b0c574a44aa9fa33307fda6ff0de27fc98f6e6e61108fb704262398d8324147a5535105e44de8110fcb873335b173b187d6db8cd6951ca967d5d7deb8622ea72e0d77024be3ec5ae7e8b0420623e6fd2594eb44f11591aec6cb59a3213278a056faa8edc44d5fd1ba8273df49443aeb9f411bbb8f6188fe2c0d9618764a05fb562531e0de67849cca839a8cfd80d34ae896a3c0b43aa44c3097e1d90a7dff02398c48f066ae72012381e7424d982e181fff95baa26caee34c0652439dee1fe69edbb04404f28ee9efabea8f0e131830efa91b4364ae1bb30a93490f20306cdc28e3cb825fec87eff6e53c70b2ec97a386f10771fe494a94015008fcbbec115f63056a717d85c88e519814d39ff6160d571a8e131a9856ac2e7ab642440dfc6dc5d58701cb66a8eda7e21974701bf33027d983bf31c77b5d0a58e4f6ba944e2e4766fa97c3e642d471513e4a2736330edd532f5fe832350f4eeb03ddb9c220ced2d539d2c501250f8569aab8ba4328126a206af78373e569b52943dfd87b6e5436e78854c114805d81d1941c463b961c65b1c9d3f0a227f4a82df0356c74d36cd9636d1ed1dc40003d310f3165f22a6cff47109f864ac0279dffd2abe83e713a9dad3b7448cc8542734d840f6518299b3a79af132c57a40f73ad037297ccfad90204ce2ab12e6ffb12931b3a879470008c2e36f2a9802036c11dc145261a8d526c3cf8699993f360c850623ed063087816b65783b39bd990d5dc7c6514190e2001f22f546ef657ec954eb4ae148b9a895523a4bdda437f3c4714fbe9f9d268ed8e4029aeb884dea03abdf48bdefe3bd1b0558cef14ca2a2b82cc0ced9bff4ea0caefcd9435047ee56a712a820e09eb6477570cff0267e7b16f4a03144923f0189132534e285e2f029e17681e9290985263b29c15cfd8b9a2afe4bcedd710aca907e65f8eaed8ed0c9ed0ba365d1d38e7c4e29b9bf88fd2daa8b6a2a2605273638689c82f701f53a56c1d82b29eb3b7bedc4cfb256b53ca3e0dd34c282ed007218c0b999149f5e0350febb3734516f40661b8d5528b1953d9e3aa5357ac2eda5c190b3c5db0e09d6b68b1d0003bf3282a08a5fd18a5252d960de6f27e3ee19df31b417628e3c454b0f9516152673007a32743a991599647fed4edf7bad17937c0da3207e33f21e091f59faf95070155eaa29997fa2c2f5f3520bca5600c73323083bd1fab1c95f2929e60612491fa368a6a9c94b3f1a46486c888438de326f818cf2908038dd38c8dac5dfd2898277d9d3438a22da6eba4558a8cd6361f39d67cc980f77b37d7e0788bfbf3bc7f134379c9a9a4bb46778b85343b0026a1e24501aa22d2f56ac98f915536f03935b9804ad0dc26a338cb1fc2b03aa49295c63aad1574ec8ef4837164ed1ecf0a80aeca1bf437de98cc13e2b8a1bf05b2846d8e263eabb4f638ac7e4ea01eb7b0b1688934a392d4595516215b590323b6587a5d926360c0f58c6f569556e4bd20b40b36d02664a4475c99e001e6385dcc94f0f8890b227bf7673974e3375b7cbd1a45ec6e90f2ed3f1f9e7056eec3726c66fe220337ad3c313d0faba14d7dbdd93e62f6518789508e930a367d72c34b2990f9efdbffa2f5367166558f1de3621115cf8759a7c9161f941e848c49fd6fb5bb27fa7434d02e0ebde126374f18a650af4873558880340ff00f2e01c40913e4543fa7a3c05d4fda79ba766ef76c717f9e0e4f213d6dbe3e1c81df45ce4a36d1183496c1d68b170bc080874ec5d70af2af6cab2acadc65ee7fabf86330138aa38da9c7886a2e9eb889d982c5e24f179ed41012daee6bd86e9d6871cf959de3248a6c1d5d5c15b670b4262fe74a4a782de7c0104e370067492403688afe2692aa82bd991faa779d721e97ad672f11a8ca7b94710205d9f3e818b94be5605a9668b19d570be02e888b74086abcf49503b4fcea349778805328898be66b5c7c3269e0491cb40b5990335bf9731799cbae2c956492c2e2f0e3f46caceda42602d4f1b383f174e12b6aee588e54d7e942837640a3ca5f26318880a61cb73d05e155778564166771f74fb6c307f1552787d2aadbf2067d31953286fb095ba8a44b5be4687b6221030cb57720e584c704a106fe19087b24874d97da533dc0458a1b2afde3c0741fed496c2173818e8546847f987ddeb1b47b79d61d2883ea522cb4fc09754f0dadeac4a897a34cd9f55428b8a2ced056a81d94fa99010ba1c4a2cdf975d6afb85dd7f6f7a50b2ec1e465aec639890041c6dfdd64632c2d52be32c8f394b44464cc010b8ba9decc202548568f57118f421d9a3ecb844077c44a4b2bc93f6b7cf36f3575449f8973b42a72ccd4a31273172e69080e7d999f9f09178a74673eafb8d140d53244951f773577a00a4bafe7e7e33826ec19cdfc1137aa1b0f6de98044bf9f1c3e48816eca00bc38ea400f0fd12d2abda08e45b900102a273d4f7f6b686900424e556a66db7c4d2f0c1d02dba32475914ebb254801c649a7037c66146ee5958b8c7c7854634467336a96b70a39183f1d6c9e8798cad5955dd678559e3cea31abe7922b35e57f865b02d22552b582f5b47b3cd02e719508e7531227a89c55eb68b5f6959fd3dac24848e7139828d366d453542e75d28533f3e78c08b7a6c22138b0d75fb6807d</script>
+</div>
+<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
+      <div class="tags">
+          <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%AF%87/" rel="tag"><i class="ic i-tag"></i> 线性代数篇</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2020-12-20 23:22:38" itemprop="dateModified" datetime="2020-12-20T23:22:38+08:00">2020-12-20</time>
+  </span>
+  <span id="2020/12/02/博客入门--线性代数/" class="item leancloud_visitors" data-flag-title="浅析线性代数" title="Views">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">Views</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">times</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>Give me a cup of [coffee]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="AI AO WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="AI AO Alipay">
+        <p>Alipay</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>AI AO <i class="ic i-at"><em>@</em></i>Hexo
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://example.com/2020/12/02/%E5%8D%9A%E5%AE%A2%E5%85%A5%E9%97%A8--%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" title="浅析线性代数">http://example.com/2020/12/02/博客入门--线性代数/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2020/12/07/%E6%B5%8B%E8%AF%95%E5%8A%9F%E8%83%BD/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipet8c1a2j20zk0m8kct.jpg" title="测试功能">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> TEST</span>
+  <h3>测试功能</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+      </div>
+      <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li class="active"><a href="/2020/12/02/%E5%8D%9A%E5%AE%A2%E5%85%A5%E9%97%A8--%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="bookmark" title="浅析线性代数">浅析线性代数</a></li><li><a href="/2020/12/16/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%BB%AD%E7%AF%87/" rel="bookmark" title="线性代数续篇">线性代数续篇</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="AI AO"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">AI AO</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">5</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">4</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">4</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3lhby15b3Utc2hhbmctamluZy14aW4=" title="https:&#x2F;&#x2F;github.com&#x2F;yao-you-shang-jing-xin"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS83SVRlMkVzSmFlY1M1Tzg=" title="https:&#x2F;&#x2F;twitter.com&#x2F;7ITe2EsJaecS5O8"><i class="ic i-twitter"></i></span>
+      <a href="/zhihu.com/people/2538426089" title="zhihu.com&#x2F;people&#x2F;2538426089" class="item zhihu"><i class="ic i-zhihu"></i></a>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvcGxheWxpc3Q/aWQ9NTgwMTA2NjEy" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;playlist?id&#x3D;580106612"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20vNjMzNzMyMDkzMC9wcm9maWxlP3RvcG5hdj0xJnd2cj02" title="https:&#x2F;&#x2F;weibo.com&#x2F;6337320930&#x2F;profile?topnav&#x3D;1&amp;wvr&#x3D;6"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cDovL3NpbWNhc3QuY29tLz9kPWZpcnN0Ymxvb2QuY29tJnM9Ym9uZSZzdz0xOCZ0cj04MTA4MjAzODM2" title="http:&#x2F;&#x2F;simcast.com&#x2F;?d&#x3D;firstblood.com&amp;s&#x3D;bone&amp;sw&#x3D;18&amp;tr&#x3D;8108203836"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>Posts</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>Archives</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>Categories</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>Tags</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/" title="In 密码学">密码学</a>
+</div>
+
+    <span><a href="/2020/12/24/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8B%E7%BE%8E-%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/" title="密码学之美--古典密码">密码学之美--古典密码</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%95%B0%E5%AD%A6%E7%B1%BB/" title="In 数学类">数学类</a>
+</div>
+
+    <span><a href="/2020/12/02/%E5%8D%9A%E5%AE%A2%E5%85%A5%E9%97%A8--%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" title="浅析线性代数">浅析线性代数</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AE%97%E6%B3%95%E7%B1%BB/" title="In 算法类">算法类</a>
+</div>
+
+    <span><a href="/2020/12/20/JAVA%E7%AE%80%E6%98%93%E8%AE%A1%E7%AE%97%E5%99%A8%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="JAVA简易计算器的实现">JAVA简易计算器的实现</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%95%B0%E5%AD%A6%E7%B1%BB/" title="In 数学类">数学类</a>
+</div>
+
+    <span><a href="/2020/12/16/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%BB%AD%E7%AF%87/" title="线性代数续篇">线性代数续篇</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/TEST/" title="In TEST">TEST</a>
+</div>
+
+    <span><a href="/2020/12/07/%E6%B5%8B%E8%AF%95%E5%8A%9F%E8%83%BD/" title="测试功能">测试功能</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2020</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">AI AO @ December</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="Symbols count total">19k words</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="Reading time total">17 mins.</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2020/12/02/博客入门--线性代数/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
